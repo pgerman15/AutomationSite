@@ -1,0 +1,26 @@
+<section layout="column" flex class="iphone-page" ng-controller="iPhoneCtrl as vm">
+    <md-content layout="row" layout-align="start center" flex>
+        <div></div>
+        <div md-whiteframe="4"  style="height: 5.75in; width: 2.85in; background-color: black; border-radius: 22px; margin-left: 15%" layout="row">
+            <iframe flex
+                style="margin-left: 16px; margin-right: 16px; margin-top: 64px; margin-bottom: 64px;"
+                ng-src="{{vm.webpage}}">
+                
+            </iframe>
+        </div>
+        <div flex layout="column" layout-align="center center">
+            <div layout="row" layout-align="start center" layout-wrap>
+                <h1 flex="100" style="color: white">Test your website on the iPhone</h1>
+                <md-input-container flex="70" style="margin-bottom: 124px;">
+                    <label style="color: white;">Webpage</label>
+                    <input style="border-color: white;" ng-model="vm.newWebpage">
+                </md-input-container>
+                <md-button class="md-icon-button" ng-click="vm.search(vm.newWebpage)" style="margin-bottom: 124px;">
+                    <md-icon style="color: white;">
+                        search
+                    </md-icon>
+                </md-button>
+            </div>
+        </div>
+    </md-content>
+</section>

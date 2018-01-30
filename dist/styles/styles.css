@@ -1,0 +1,81 @@
+body.global div.layout-align-start-start button.align-with-input-container{
+    margin-top: 18px;
+}
+
+body.global div.layout-align-start-start span.align-with-input-container{
+    margin-top: 24px;
+}
+
+body.global md-input-container span.hint{
+    position: absolute;
+    left: 2px;
+    right: auto;
+    bottom: 7px;
+    font-size: 12px;
+    line-height: 14px;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    color: #8a8a8a;
+}
+section.iphone-page md-content>div:nth-child(1){
+    background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/H8WuRINimqur8ud/technology-background-gear_rhfg-imn_thumbnail-full01.png);
+    filter:blur(5px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+section.iphone-page md-content>div{
+    z-index: 1;
+}
+
+section.iphone-page md-input-container .md-input{
+    color: #ffffff;
+}
+
+section.iphone-page md-input-container .md-input:focus {
+    color: #ffffff;
+}
+section.main-page md-card.event-card{
+    height: 315px;
+    width: 280px;
+}
+
+section.main-page md-card.event-card md-card-title{
+    padding-bottom: 0px;
+}
+
+section.main-page md-card.event-card md-card-content{
+    font-size: 14px;
+}
+section.main-page, section.main-page>md-content{
+    background-color: #CCC;
+}
+
+section.main-page button.show-green-check md-icon{
+    color: green;
+}
+
+section.main-page button.show-red-block md-icon{
+    color: red;
+}
+md-dialog.add-event-dialog div.photo-carousel-show{
+    height: 100px;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+md-dialog.add-event-dialog div.photo-carousel-hide{
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+md-dialog.add-event-dialog div.photo-carousel md-card>img{
+    max-height: 84px;
+}
+
+md-dialog.add-event-dialog div.photo-carousel button, 
+md-dialog.add-event-dialog div.photo-carousel md-card{
+    margin: 0px;
+}

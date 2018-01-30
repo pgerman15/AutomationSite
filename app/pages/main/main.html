@@ -1,0 +1,50 @@
+<section layout="column" flex class="main-page" ng-controller="MainCtrl as vm">
+    <md-toolbar class="md-primary">
+        <div class="md-toolbar-tools">
+            <span>Upcoming Events</span>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.showHidden = !vm.showHidden">
+                <md-tooltip md-direction="left" ng-show="!vm.showHidden">Show rejected events</md-tooltip>
+                <md-tooltip md-direction="left" ng-show="vm.showHidden">Hide rejected events</md-tooltip>
+                <md-icon ng-show="!vm.showHidden">
+                    visibility
+                </md-icon>
+                <md-icon ng-show="vm.showHidden">
+                    visibility_off
+                </md-icon>
+            </md-button>
+        </div>    
+    </md-toolbar>
+    <md-button class="md-fab md-fab-bottom-right md-accent" ng-click="vm.showDialog($event)">
+        <md-icon class="md-icon-buttons">
+            add
+        </md-icon>
+    </md-button>
+    <md-content layout="row" layout-margin>
+        <div layout="row" layout-margin layout-wrap>
+            <md-card layout="column" md-whiteframe="4" ng-repeat="event in vm.events track by $index" class="event-card" ng-hide="event.status == 'denied' && !vm.showHidden">
+                <img flex="50" ng-src="{{event.img}}"></img>
+                <md-card-title>
+                    {{event.name}}
+                </md-card-title>
+                <div class="card-text-container" flex>
+                    <md-card-content>
+                        {{event.description}}
+                    </md-card-content>
+                </div>
+                <md-card-actions layout="row" layout-align="end start">
+                    <md-button class="md-icon-button" ng-click="vm.deny($index)" ng-hide="event.status == 'accepted'" ng-class="(event.status == 'denied') ? 'show-red-block' : ''">
+                        <md-icon class="material-icons">
+                            block  
+                        </md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" ng-click="vm.accept($index)" ng-hide="event.status == 'denied'" ng-class="(event.status == 'accepted') ? 'show-green-check' : ''">
+                        <md-icon class="material-icons">
+                            check    
+                        </md-icon>
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-content>
+</section>

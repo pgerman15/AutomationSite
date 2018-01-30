@@ -1,0 +1,45 @@
+<md-dialog flex="50" class="add-event-dialog">
+    <div class="md-toolbar-tools">
+        <span>Add event</span>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="close()">
+            <md-icon>close</md-icon>
+        </md-button>
+    </div>
+    <md-dialog-content class="md-dialog-content" layout="column">
+        <div layout="row" layout-align="start start">
+            <md-input-container flex>
+                <label>Image</label>
+                <input ng-model="img" required>
+                <span class="hint">Enter full url or search by keyword</span>
+            </md-input-container>
+            <md-button class="md-icon-button align-with-input-container" ng-click="search(img)">
+                <md-icon class="material-icons">
+                    search
+                </md-icon>
+            </md-button>
+        </div>
+        <div layout="row" ng-class="imageURLs ? 'photo-carousel-show' : 'photo-carousel-hide'">
+            <md-button flex ng-repeat="url in imageURLs track by $index" layout="column" ng-click="pickImage($index)">
+                <md-card flex layout="column">
+                    <img md-whiteframe="4" ng-src="{{url}}"></img>
+                </md-card>
+            </md-button>
+        </div>
+        <div layout="row">
+            <md-input-container flex="50">
+                <label>Event name</label>
+                <input ng-model="name">
+            </md-input-container>
+        </div>
+        <md-input-container>
+            <label>Description</label>
+            <textarea ng-model="description" md-maxlength="75" rows="1"></textarea>
+        </md-input-container>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="finish()" class="md-accent">
+            save
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>
